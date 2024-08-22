@@ -1,0 +1,183 @@
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card h6 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.contact-card p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-card p a:hover {
+  text-decoration: underline;
+}
+
+ 
+ /* Menú desplegable */
+ .submenu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+  }
+
+  li:hover .submenu {
+    display: block;
+  }
+
+  /* Acordeones */
+  .col-lg-6 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .accordions {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .accordion {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .accordion-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+
+  .accordion-body {
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .accordion.is-expanded .accordion-head {
+    background-color: #f0f0f0;
+  }
+
+  .accordion.is-expanded .accordion-body {
+    max-height: 1000px;
+  }
+
+  .accordion .content {
+    margin: 0;
+  }
+
+  .icon {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion.is-expanded .icon {
+    transform: rotate(90deg);
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .header-area {
+      position: relative;
+    }
+
+    .header-area .main-nav .nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .header-area .main-nav .nav li {
+      width: 100%;
+    }
+
+    .header-area .main-nav .nav li a {
+      padding: 10px;
+      width: 100%;
+      display: block;
+    }
+
+    .image-container img {
+      width: 100%;
+    }
+
+    .text-over-image {
+      top: 10%;
+      right: 10%;
+    }
+
+    .text-over-image .row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .text-over-image .col-lg-9 {
+      margin: 0;
+      text-align: left;
+    }
+
+    .footer .col-lg-11 {
+      text-align: center;
+    }
+
+    .footer .main-button-red {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }    
+  }
+
+  .slider {
+    position: relative;
+    width: 100%; /* Ajusta el tamaño del slider según tus necesidades */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  }
+
+  .slider ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .slider li {
+    position: relative; /* Necesario para el posicionamiento absoluto del botón */
+  }
+  
+  .slider img {
+    width: 100%; /* Ajusta el tamaño de las imágenes según tus necesidades */
+     display: block;
+  }
+
+  .overlay-button {
+    position: absolute;
+    bottom: 70px; /* Ajusta la distancia desde el borde inferior */
+    left: 60px; /* Ajusta la distancia desde el borde izquierdo */   
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0); /* Fondo semi-transparente */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Asegura que el botón esté encima de la imagen */
+  }
+  
+  .overlay-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al pasar el ratón */
+  }

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+  <title>Begroup ec</title>
+
+  <style>
+    .submenu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+    }
+
+    li:hover .submenu {
+      display: block;
+    }
+  </style>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <!--
+
+Begroup Ec 569 Edu Meeting
+
+https://begroupec.com/tm-569-edu-meeting
+
+-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const value = localStorage.getItem('reload')
+      console.log(value);
+      if (value) {
+        let reloadValue = parseInt(localStorage.getItem('reload'));
+        if (reloadValue === 0) {
+          localStorage.setItem('reload', 1);
+        }
+      } else {
+        localStorage.setItem('reload', 0);
+        window.location.reload()
+      }
+    })
+    // function cargarPaginaAlInicio() {
+    //   console.log("ansssd 2");
+    //   if (localStorage.getItem('reload')) {
+    //     let reloadValue = parseInt(localStorage.getItem('reload'));
+    //     if (reloadValue === 0) {
+    //       localStorage.setItem('reload', 1);
+    //       location.reload();
+    //     }
+    //   } else {
+    //     localStorage.setItem('reload', 0);
+    //   }
+    // }
+  </script>
+</head>
+
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo" style="font-size: 19px; font-weight: 700;">
+              Be group ec
+            </a>
+            <!-- Menu -->
+            <ul class="nav">
+              <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i> <b>Inicio</b> </a>
+              </li>
+              <!--<li><a href="capacitaciones.html"><i class="fa fa-leanpub" aria-hidden="true"></i> <b>Capacitación Gratuita</b> </a></li>--->
+              <li class="has-submenu">
+                <a href="#" class="toggle-submenu"><i class="fa fa-info-circle" aria-hidden="true"></i> <b>Sobre
+                    Nosotros</b> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="submenu">
+                  <li><a href="contactos.html">Conócenos</a></li>
+                  <li><a href="distribuidores.html">Distribuidores</a></li>
+                </ul>
+              </li>
+              <li><a href="productos.html"><i class="fa fa-cart-plus" aria-hidden="true"></i> <b>Productos</b> </a></li>
+              <li><a href="descargas.html"><i class="fa fa-download" aria-hidden="true"></i> <b>Descargas</b></a></li>
+              <li class="has-submenu">
+                <a href="#" class="toggle-submenu"><i class="fa fa-wrench" aria-hidden="true"></i> <b>Herramientas</b>
+                  <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="submenu">
+                  <li><a href="consultas.html">Consultas</a></li>
+                </ul>
+              </li>
+              <!-- <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> <b>Contáctenos</b></a></li> -->
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Menu End ***** -->
+  </header>
+
+  <!-- JavaScript para manejar los clics en los submenús -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
+
+      toggleSubmenuLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          var submenu = this.nextElementSibling;
+          submenu.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+
+  <!-- CSS para ocultar/mostrar submenús -->
+  <style>
+    .submenu {
+      display: none;
+    }
+
+    .submenu.open {
+      display: block;
+    }
+  </style>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="heading-productos header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Conoce nuestros productos</h6>
+          <h2>Somos Innovaci&oacuten</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" style="padding-top: 4%;" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <!--Categorias-->
+            <div class="col-lg-12">
+              <div class="filters">
+                <ul>
+                  <li data-filter="*" class="active">Todos</li>
+                  <li data-filter=".soon">Firmas Electronicas</li>
+                  <li data-filter=".imp">Plantillas</li>
+                  <li data-filter=".att">Programas</li>
+                  <li data-filter=".tics">Tic's Empresariales</li>
+                </ul>
+              </div>
+            </div>
+            <!--Productos-->
+            <div class="col-lg-12">
+              <div class="row grid">
+
+                <!------------------------------------------------------------ FIRMAS ELECTRONICAS ------------------------------------------------------------------>
+                <!--  Firmas electronica persona natural  P2-->
+                <div class="col-lg-3 templatemo-item-col all soon">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>Desde $20.00</span>
+                      </div>
+                      <a><img src="assets/images/course-02.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Firma%20Electr%C3%B3nica%20(Persona%20Natural)."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="firma-persona-natural.html" target="_blank"> <i
+                              class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--  Firmas electronica persona juridica P1-->
+                <div class="col-lg-3 templatemo-item-col all soon">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>Desde $26.00 </span>
+                      </div>
+                      <a><img src="assets/images/course-01.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Firma%20Electr%C3%B3nica%20(Persona%20Jur%C3%ADdica)."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="firma-persona-juridica.html" target="_blank"> <i
+                              class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!---------------------------------------------------------------- PLANTILLAS ------------------------------------------------------------------------->
+                <!-- Plantilla No obligados         p14-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$75.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-14.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20No%20obligados%20a%20llevar%20contabilidad"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="no-obligados-a-llevar-contabilidad.html" target="_blank"> <i
+                              class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla Datos Renta          p4-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$75.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-04.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20Datos%20Renta."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="datos-renta.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla OREL ATS             p7-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$75.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-07.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20OREL%20ATS%20Genera%20Anexo."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="orel-ats.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla Rdep                 p15-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$75.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-15.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20Rdep"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="plantilla-Rdep.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla Decimo Tercero       p6-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$40.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-06.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20D%C3%A9cimo%20Tercero%20Sueldo."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="decimo-tercer.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla Decimo Cuarto        p5-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$40.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-05.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20D%C3%A9cimo%20Cuarto%20Sueldo."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="decimo-cuarto.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla UTILIDADES           p9-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$50.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-09.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20Genera%20Reporte%20Utilidades."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="utilidades.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla Conciliacion banca   p16-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$20.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-16.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20Conciliaci%C3%B3n%20bancaria"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="conciliacion-bancaria.html" target="_blank"> <i
+                              class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Plantilla Depreciacion activos p3-->
+                <div class="col-lg-3 templatemo-item-col all imp">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$50.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-03.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20Depreciaci%C3%B3n%20de%20Activos."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="depreciacion-activos.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!---------------------------------------------------------------- PROGRAMAS ------------------------------------------------------------------------->
+                <!-- OREL GOLD                      p18-->
+                <div class="col-lg-3 templatemo-item-col all att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$150.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-18.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20OREL%20(Version%20gold)."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="Orel-Gold.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- SISTEMA AMELIA                 p19-->
+                <div class="col-lg-3 templatemo-item-col all att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>Desde $10.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-19.png" alt=""></a>
+                    </div>
+                    <!--Botones-->
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Sistema%20Amelia"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="sistema-amelia.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- IMPRENTA ELECTRONICA           p20-->
+                <div class="col-lg-3 templatemo-item-col all att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>Desde $10.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-20.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Imprenta%20electr%C3%B3nica"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="Imprenta-electronica.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- AGENDA CONTABLE                p13-->
+                <div class="col-lg-3 templatemo-item-col all att">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>$150.00 + IVA</span>
+                      </div>
+                      <a><img src="assets/images/course-13.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Agenda%20contable"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="Agenda-contable.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!---------------------------------------------------------------- TICS EMPRESARIALES ----------------------------------------------------------------->
+                <!-- CORREO CORPORATIVO             p12-->
+                <div class="col-lg-3 templatemo-item-col all tics">
+                  <div class="meeting-item">
+                    <div class="thumb">
+
+                      <div class="price">
+                        <span>$100.00 + IVA</span>
+                      </div>
+
+                      <a><img src="assets/images/course-12.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Creaci%C3%B3n%20de%20correos%20con%20tu%20dominio:%20Correo%20corporativo"
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="Correo-corporativo.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- PAGINA WEB       p11-->
+                <div class="col-lg-3 templatemo-item-col all tics">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <!--
+                      <div class="price">
+                        <span>$00.00</span>
+                      </div>
+                      -->
+                      <a><img src="assets/images/course-11.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      <div class="row">
+
+                        <div class="col-6 adquirir">
+                          <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20P%C3%A1gina%20web%20administrable:%20Tu%20espacio%20web%20(paquete%20gold)."
+                            target="_blank"> <i class="fa fa-whatsapp fa-2x"></i>
+                            <h7><b>Adquirir</b></h7>
+                          </a>
+                        </div>
+
+                        <div class="col-6 ver_precios">
+                          <a href="Pagina-web.html" target="_blank"> <i class="fa fa-shopping-cart fa-2x"></i>
+                            <h7><b>Ver Precios</b></h7>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!----------------------------------------------------------------------------------------------------------------------------------------------------->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+    $(window).on('load', function () {
+      var $grid = $('.grid').isotope({
+        itemSelector: '.templatemo-item-col',
+        layoutMode: 'fitRows'
+      });
+
+      // Leer el parámetro 'filter' de la URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var filterValue = urlParams.get('filter'); // Obtiene el valor del filtro, como 'imp'
+
+      if (filterValue) {
+        $grid.isotope({ filter: '.' + filterValue }); // Aplica el filtro desde el parámetro de la URL
+        $('.filters ul li').removeClass('active');
+        $('.filters ul li[data-filter=".' + filterValue + '"]').addClass('active');
+      }
+
+
+      // Manejo de clics en los filtros
+      $('.filters ul li').click(function () {
+        $('.filters ul li').removeClass('active');
+        $(this).addClass('active');
+
+        var data = $(this).attr('data-filter');
+        $grid.isotope({
+          filter: data
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

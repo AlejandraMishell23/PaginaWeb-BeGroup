@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="description" content="Página de consultas de Begroup ec. Consulta información sobre cédulas y RUC">
+  <meta name="keywords" content="consultas cédula/RUC, información cédula/RUC, datos cédula/RUC">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+   <link rel="icon" href="assets/images/logo.png" type="image/x-icon"> 
+   <link rel="stylesheet" href="estilos.css">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Consultar cedula o RUC - Begroup ec</title>
+  <title>Begroup ec</title>
+  <style>
+    .submenu {
+      display: none;
+      position: absolute;
+      /* Otros estilos para el submenú */
+    }
+
+    li:hover .submenu {
+      display: block;
+    }
+  </style>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <!--
+
+Begroup Ec 569 Edu Meeting
+
+https://begroupec.com/tm-569-edu-meeting
+
+-->
+
+</head>
+
+<body>
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky" >
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a href="index.html" class="logo" style="  font-size: 19px; font-weight: 700;;">
+            Be group ec
+          </a>
+          <!-- Menu -->
+          <ul class="nav">
+            <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i> <b>Inicio</b> </a>
+            </li>
+            <!--<li><a href="capacitaciones.html"><i class="fa fa-leanpub" aria-hidden="true"></i> <b>Capacitación Gratuita</b> </a></li>--->
+            <li><a href=""><i class="fa fa-info-circle" aria-hidden="true"></i> <b>Sobre Nosotros</b> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul class="submenu">
+                <li><a href="contactos.html">Conócenos</a></li>
+                <li><a href="distribuidores.html">Distribuidores</a></li>
+              </ul>
+            </li>
+            <li><a href="productos.html"><i class="fa fa-cart-plus" aria-hidden="true"></i> <b>Productos</b> </a></li>
+            <li><a href="descargas.html"><i class="fa fa-download" aria-hidden="true"></i> <b>Descargas</b></a></li>
+            
+            <li><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i> <b>Herramientas</b> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul class="submenu">
+                <li><a href="consultas.html">Consultas</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> <b>Contáctenos</b></a></li>
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Menu End ***** -->
+  </nav>
+</header>
+  <!-- ***** APP ***** -->
+  <div class="footer"></div>
+    <div class="container col-sm-4 mt-4">
+      <form id="myForm">
+        <label for="tipoDocumento">CONSULTAR DATOS</label>
+        <select class="form-control" id="tipoDocumento">
+          <option value="cedula">CÉDULA</option>
+          <option value="ruc">RUC</option>
+        </select>
+        <div id="campoCedula" class="form-group">
+          <label for="numeroCedula">CÉDULA</label>
+          <input type="number" class="form-control" id="numeroCedula" placeholder="Ingrese su cédula">
+        </div>
+        <div id="campoRuc" class="form-group" style="display: none;">
+          <label for="numeroRuc">RUC</label>
+          <input type="number" class="form-control" id="numeroRuc" placeholder="Ingrese su RUC">
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary">Consultar</button>
+        </div>
+        <div id="loading" class="text-center mt-4" style="display: none;">
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Cargando...</span>
+          </div>
+        </div>
+      </form>
+      <div id="resultado" class="mt-4 resultado-fijo" style="min-height: 100px; margin-top: 20px;"></div>
+    </div>
+  </div>
+  
+  <!-- Enlace al JS de Bootstrap y a tu script personalizado -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Obtener elementos del DOM
+    var tipoDocumento = document.getElementById('tipoDocumento');
+    var campoCedula = document.getElementById('campoCedula');
+    var campoRuc = document.getElementById('campoRuc');
+    var form = document.getElementById('myForm');
+    var resultadoDiv = document.getElementById('resultado');
+    var loadingDiv = document.getElementById('loading');
+  
+    // Agregar evento change al selector de tipo de documento
+    tipoDocumento.addEventListener('change', function () {
+      if (tipoDocumento.value === 'cedula') {
+        campoCedula.style.display = 'block';
+        campoRuc.style.display = 'none';
+      } else {
+        campoCedula.style.display = 'none';
+        campoRuc.style.display = 'block';
+      }
+    });
+  
+    // Agregar evento submit al formulario
+    form.addEventListener('submit', function (event) {
+      // Evitar que el formulario se envíe
+      event.preventDefault();
+  
+      // Mostrar el spinner de carga
+      loadingDiv.style.display = 'block';
+  
+      // Obtener el tipo de documento seleccionado
+      var tipo = tipoDocumento.value;
+  
+      // Limpiar el contenido del resultado div
+      resultadoDiv.innerHTML = '';
+  
+      if (tipo === 'cedula') {
+        // Obtener el número de cédula ingresado por el usuario
+        var numeroCedula = document.getElementById('numeroCedula').value;
+  
+        // Validar longitud de la cédula
+        if (numeroCedula.length > 10) {
+          // Ocultar el spinner de carga
+          loadingDiv.style.display = 'none';
+          
+          // Mostrar mensaje de error con SweetAlert2
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "La cédula no puede tener más de 10 dígitos"
+          });
+          return; // Salir de la función si hay un error
+        } else if (numeroCedula.length < 10) {
+          // Ocultar el spinner de carga
+          loadingDiv.style.display = 'none';
+          
+          // Mostrar mensaje de error con SweetAlert2
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "La cédula debe tener al menos 10 dígitos"
+          });
+          return; // Salir de la función si hay un error
+        }
+  
+        // Realizar la solicitud GET a la nueva API de cédula
+        fetch(`https://begroupec.info/api-cedula/consultaCedula.php?cedula=${numeroCedula}`)
+          .then(response => {
+            // Ocultar el spinner de carga
+            loadingDiv.style.display = 'none';
+            
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Verificar si la respuesta contiene los datos esperados
+            if (data.identificacion && data.razonsocial) {
+              // Cuadro Bootstrap
+              var content = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">Información de Cédula</h5>
+                            <p class="card-text" style="color: black;"><strong>Identificación:</strong> ${data.identificacion}</p>
+                            <p class="card-text" style="color: black;"><strong>Razón Social:</strong> ${data.razonsocial}</p>
+                        </div>
+                    </div>
+                `;
+              resultadoDiv.innerHTML = content;
+            } else {
+              // Mostrar mensaje de error personalizado con SweetAlert2
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Datos de cédula no encontrados",
+              });
+            }
+          })
+          .catch(error => {
+            // Ocultar el spinner de carga
+            loadingDiv.style.display = 'none';
+            
+            console.error('Error al obtener los datos:', error);
+          });
+      } else if (tipo === 'ruc') {
+        // Obtener el número de RUC ingresado por el usuario
+        var numeroRuc = document.getElementById('numeroRuc').value;
+  
+        // Validar longitud del RUC
+        if (numeroRuc.length > 13) {
+          // Ocultar el spinner de carga
+          loadingDiv.style.display = 'none';
+          
+          // Mostrar mensaje de error con SweetAlert2
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "El RUC no puede tener más de 13 dígitos"
+          });
+          return; // Salir de la función si hay un error
+        } else if (numeroRuc.length < 13) {
+          // Ocultar el spinner de carga
+          loadingDiv.style.display = 'none';
+          
+          // Mostrar mensaje de error con SweetAlert2
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "El RUC debe tener al menos 13 dígitos"
+          });
+          return; // Salir de la función si hay un error
+        }
+  
+        // Realizar la solicitud GET a la API de RUC
+        fetch(`https://begroupec-tech.com/api/getRuc.php?id=${numeroRuc}`)
+          .then(response => {
+            // Ocultar el spinner de carga
+            loadingDiv.style.display = 'none';
+            
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Verificar si la respuesta contiene los datos esperados
+            if (data.NUMERO_RUC && data.RAZON_SOCIAL) {
+              // Crear un cuadro Bootstrap
+              var content = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: black;">Información de RUC</h5>
+                            <p class="card-text" style="color: black;"><strong>Identificación:</strong> ${data.NUMERO_RUC}</p>
+                            <p class="card-text" style="color: black;"><strong>Razón Social:</strong> ${data.RAZON_SOCIAL}</p>
+                        </div>
+                    </div>
+                `;
+              resultadoDiv.innerHTML = content;
+            } else {
+              // Mostrar mensaje de error personalizado con SweetAlert2
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Datos de RUC no encontrados",
+              });
+            }
+          })
+          .catch(error => {
+            // Ocultar el spinner de carga
+            loadingDiv.style.display = 'none';
+            
+            console.error('Error al obtener los datos:', error);
+          });
+      }
+    });
+  </script>
+
+<!-- Contact Section -->
+<div class="footer"></div>
+<section class="contactos">
+  <div class="container">
+    <div class="row">
+      <!-- Numero -->
+      <div class="col-lg-3">
+        <div class="contact-card text-center">
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp fa-3x" style="color: #25d366;"></i>
+          </div>
+          <h6>Número</h6>
+          <p><a href="https://api.whatsapp.com/send?phone=+593982792618&text=%C2%A1Hola,%20reciba%20un%20cordial%20saludo,%20me%20quiero%20comunicar%20con%20BeGroup" target="_blank">+593 98 279 2618</a></p>
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="col-lg-3">
+        <div class="contact-card text-center">
+          <div class="contact-icon">
+            <i class="fa fa-phone fa-3x" style="color: #007bff;"></i>
+          </div>
+          <h6>Dirección</h6>
+          <p>02 2762 190 / SANTO DOMINGO</p>
+        </div>
+      </div>
+
+      <!-- Correo -->
+      <div class="col-lg-3">
+        <div class="contact-card text-center">
+          <div class="contact-icon">
+            <i class="fa fa-envelope fa-3x" style="color: #D44638;"></i>
+          </div>
+          <h6>Correo</h6>
+          <p><a href="mailto:gerencia@begroupec.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> gerencia@begroupec.com</a></p>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="col-lg-3">
+        <div class="contact-card text-center">
+          <div class="contact-icon">
+            <i class="fab fa-instagram fa-3x" style="color: #833ab4;"></i>
+          </div>
+          <h6>Instagram</h6>
+          <p><a href="https://www.instagram.com/begroupec/" target="_blank">begroupec</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  
+  <script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
+
+    var showSection = function showSection(section, isAnimate) {
+      var
+        direction = section.replace(/#/, ''),
+        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+        reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $('body, html').animate({
+          scrollTop: reqSectionPos
+        },
+          800);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+
+    };
+
+    var checkSection = function checkSection() {
+      $('.section').each(function () {
+        var
+          $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var
+            currentId = $this.data('section'),
+            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+          reqLink.closest('li').addClass('active').
+            siblings().removeClass('active');
+        }
+      });
+    };
+
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
+</body>
+
+</html>

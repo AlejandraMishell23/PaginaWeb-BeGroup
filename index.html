@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Begroup ec</title>
+  <style>
+    .division {
+      border-right: 5px solid #fff;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .col-md-3:not(:last-child) {
+        border-right: 10px solid #fff;
+      }
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+    .nav-bottom {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .popup-whatsapp {
+      display: none;
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      width: 300px;
+      background-color: #F8F9FA;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      font-family: 'Roboto', sans-serif;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .content-whatsapp {
+      padding: 15px;
+    }
+
+    .content-whatsapp p {
+      margin: 0;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .whatsapp-icon {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: url('path/to/whatsapp-icon.png') no-repeat center;
+      background-size: contain;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .whats-input {
+      width: calc(100% - 50px);
+      border: none;
+      border-radius: 20px;
+      padding: 10px 15px;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .send-msPopup {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .send-msPopup:hover {
+      background-color: #128C7E;
+    }
+
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
+    .circle-anime {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      bottom: 15px;
+      right: 15px;
+      background-color: #25D366;
+      border-radius: 50%;
+      opacity: 0;
+      animation: circle-anim 3s infinite;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .closePopup {
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 20px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+
+    .content-whatsapp.-top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .content-whatsapp.-bottom {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+  <style>
+    @media only screen and (max-width: 768px) {
+      .title-container {
+        text-align: center !important;
+        margin-left: 0 !important;
+      }
+
+      .main-title,
+      .sub-title {
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+      }
+
+      .main-title {
+        margin-top: 10px !important;
+      }
+
+      .sub-title {
+        margin-top: 10px !important;
+      }
+    }
+  </style>
+  <style>
+    /* Ocultar el pie de página móvil por defecto */
+    .mobile-footer {
+      display: none;
+    }
+
+    /* Mostrar el pie de página móvil en pantallas pequeñas (dispositivos móviles) */
+    @media (max-width: 767px) {
+      .desktop-footer {
+        display: none;
+      }
+
+      .mobile-footer {
+        display: block;
+        position: relative;
+        /* Cambiar la posición a relativa */
+        bottom: auto;
+        /* Remover el bottom absoluto */
+        right: auto;
+        /* Remover el right absoluto */
+      }
+    }
+
+    /* Ajustar la posición del contenido en computadoras */
+    .desktop-footer .desktop-caption {
+      margin-top: -50px;
+      /* Ajusta este valor según sea necesario */
+    }
+
+    /* Ajustar la posición del contenido en móviles */
+    .mobile-footer .mobile-caption {
+      margin-top: -200px;
+      /* Ajusta este valor según sea necesario */
+    }
+  </style>
+  <style>
+    .col-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      flex-direction: column;
+    }
+  </style>
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="estilosinicio.css">
+  <!-- Inline CSS Styles -->
+</head>
+
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo" style="font-size: 19px; font-weight: 700;">
+              Be group ec
+            </a>
+            <!-- Menu -->
+            <ul class="nav">
+              <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i> <b>Inicio</b> </a>
+              </li>
+              <!--<li><a href="capacitaciones.html"><i class="fa fa-leanpub" aria-hidden="true"></i> <b>Capacitación Gratuita</b> </a></li>--->
+              <li class="has-submenu">
+                <a href="#" class="toggle-submenu"><i class="fa fa-info-circle" aria-hidden="true"></i> <b>Sobre
+                    Nosotros</b> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="submenu">
+                  <li><a href="contactos.html">Conócenos</a></li>
+                  <li><a href="distribuidores.html">Distribuidores</a></li>
+                </ul>
+              </li>
+              <li><a href="productos.html"><i class="fa fa-cart-plus" aria-hidden="true"></i> <b>Productos</b> </a></li>
+              <li><a href="descargas.html"><i class="fa fa-download" aria-hidden="true"></i> <b>Descargas</b></a></li>
+              <li class="has-submenu">
+                <a href="#" class="toggle-submenu"><i class="fa fa-wrench" aria-hidden="true"></i> <b>Herramientas</b>
+                  <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="submenu">
+                  <li><a href="consultas.html">Consultas</a></li>
+                </ul>
+              </li>
+              <!-- <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> <b>Contáctenos</b></a></li> -->
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Menu End ***** -->
+  </header>
+
+  <!-- JavaScript para manejar los clics en los submenús -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggleSubmenuLinks = document.querySelectorAll('.toggle-submenu');
+
+      toggleSubmenuLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          var submenu = this.nextElementSibling;
+          submenu.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+
+  <!-- CSS para ocultar/mostrar submenús -->
+  <style>
+    .submenu {
+      display: none;
+    }
+
+    .submenu.open {
+      display: block;
+    }
+  </style>
+
+
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="image-container" style="position: relative;">
+    <div class="mobile-titles" style="text-align: center; padding: 80px 10px 20px; background-color: #F0F0FF;">
+      <h2 class="main-title" style="color: #002B64; font-weight: bold; font-size: 24px; margin-bottom: 10px;">"TU MEJOR
+        ALIADO"</h2>
+      <h2 class="sub-title" style="color: #002B64; font-weight: bold; font-size: 18px;">SOMOS INNOVACIÓN Y TECNOLOGÍA
+      </h2>
+    </div>
+    <img src="assets/images/PAGINA BEGROUP principal.png" alt="">
+    <div class="text-over-image" style="position: absolute; top: 0; right: 0;">
+      <div class="caption"></div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="caption"></div>
+        </div>
+        <div class="col-lg-9 title-container" style="text-align: center; margin-left: auto;">
+          <h2 class="main-title desktop-only"
+            style="color: #002B64; font-weight: bold; margin-top: 100px; margin-left: -354px;">"TU MEJOR ALIADO"</h2>
+          <h2 class="sub-title desktop-only"
+            style="color: #002B64; font-weight: bold; margin-top: 10px; margin-left: -627px;">SOMOS INNOVACIÓN Y
+            TECNOLOGÍA</h2>
+        </div>
+      </div>
+    </div>
+    <div class="footer desktop-footer" style="position: absolute; bottom: 0; right: 0;">
+      <div class="row">
+        <div class="col-lg-11 des-be" style="text-align: right;">
+          <div class="caption desktop-caption" style="float: right; margin-right: 10px;">
+            <p style="color: #002B64; font-weight: bold; text-align: right; margin-top: 10px;">Automatización de tus
+              procesos</p>
+            <p style="color: #002B64; font-weight: bold; text-align: right; margin-top: -10px;">facilitando su
+              desarrollo</p>
+            <p style="color: #002B64; text-align: right;">Begroup te acerca a este objetivo</p>
+            <div class="main-button-red" style="margin-top: 20px; margin-bottom: 80px; text-align: right;">
+              <a style="display: inline-block; padding: 16px 45px; font-size: 16px; color: white; background-color:#002B64; text-decoration: none; white-space: nowrap;"
+                href="https://wa.link/ej9yx8" target="_blank">Comunícate con un Asesor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer mobile-footer">
+      <div class="row">
+        <div class="caption mobile-caption">
+          <div style="background-color: #F0F0FF; text-align: center;">
+            <p style="color: #002B64; font-weight: bold; text-align: center; margin-top: 10px;">Automatización de tus
+              procesos</p>
+            <p style="color: #002B64; font-weight: bold; text-align: center; margin-top: -10px;">facilitando su
+              desarrollo</p>
+            <p style="color: #002B64; text-align: center;">Begroup te acerca a este objetivo</p>
+            <div class="main-button-red" style="margin-top: 20px; margin-bottom: 80px; text-align: center;">
+              <a style="display: inline-block; padding: 16px 45px; font-size: 16px; color: white; background-color:#002B64; text-decoration: none; white-space: nowrap;"
+                href="https://wa.link/ej9yx8" target="_blank">Comunícate con un Asesor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (min-width: 768px) {
+
+      .mobile-titles,
+      .mobile-footer {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+
+      .desktop-only,
+      .desktop-footer {
+        display: none;
+      }
+    }
+  </style>
+  <!--Items-->
+  <section>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 col-mobile mb-4 mb-md-0 mr-2"
+          style="background-image: url('assets/images/ICONOS PRODUCTOS.png'); box-shadow: 4px 0 0 #fff;">
+          <div>
+            <h4 style="color: #DDE4F3;">.</h4>
+            <h4 class="text-center text-white pt-5">FACTURADOR ELECTRÓNICO</h4>
+            <p class="p-3 text-center text-white">Herramienta digital que permite crear y emitir comprobantes de ventas
+              en formato electrónico</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-mobile mb-4 mb-md-0 mr-2"
+          style="background-image: url('assets/images/ICONOS PRODUCTOS2.png');">
+          <div>
+            <h4 style="color: #FFFFFF;">.</h4>
+            <h4 class="text-center text-white pt-5">FIRMAS ELECTRÓNICAS</h4>
+            <p class="p-3 text-center text-white">Archivo digital que contiene toda tu información cifrada amparada en
+              la Ley de Comercio Electrónico</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-mobile mb-4 mb-md-0 mr-2"
+          style="background-image: url('assets/images/ICONOS PRODUCTOS3.png');">
+          <div>
+            <h4 style="color: #DDE4F3;">.</h4>
+            <h4 class="text-center text-white pt-5">HERRAMIENTAS CONTABLES</h4>
+            <p class="p-3 text-center text-white">Permite de una forma sistemática y automatizada generar operaciones y
+              demás hechos contables</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-mobile mb-4 mb-md-0"
+          style="background-image: url('assets/images/ICONOS PRODUCTOS4.png');">
+          <div>
+            <h4 style="color: #0B1162;">.</h4>
+            <h4 class="text-center text-white pt-5">SERVICIOS DE TI</h4>
+            <h4 class="text-center text-white" style="font-size: 14px;">(TECNOLOGÍA DE LA INFORMACIÓN)</h4>
+            <p class="p-3 text-center text-white">Herramienta digital que permite crear y emitir comprobantes de ventas
+              en formato electrónico</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--Publicidad-->
+  <section class="text-center">
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>Somos Be Group</h2>
+        </div>
+
+        <div class="slider">
+          <ul>
+            <li class="slide">
+              <img src="assets/images/BEPASSWORD.png" alt="Imagen 1">
+              <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Firma%20Electr%C3%B3nica%20(Persona%20Jur%C3%ADdica)."
+                class="overlay-button">
+                <i class="fa fa-whatsapp fa-1x" aria-hidden="true"></i>  Contactanos
+              </a>
+            </li>          
+            <li class="slide">
+              <img src="assets/images/PLANTILLAS_EXCEL.png" alt="Imagen 2">
+              <a href="productos.html?filter=imp" class="overlay-button">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i> Ver mas
+              </a>
+            </li>
+            <li class="slide">
+              <img src="assets/images/OREL_ESCRITORIO.png" alt="Imagen 3">
+              <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Firma%20Electr%C3%B3nica%20(Persona%20Jur%C3%ADdica)."
+                class="overlay-button">
+                <i class="fa fa-whatsapp fa-1x" aria-hidden="true"></i>  Contactanos
+              </a>
+            </li>
+            <li class="slide">
+              <img src="assets/images/FIRMA_ELECTRONICA.png" alt="Imagen 4">
+              <a href="productos.html?filter=soon" class="overlay-button">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i> Ver mas
+              </a>
+            </li>                  
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Productos populares -->
+  <section class="our-courses" id="courses" style="padding-top:10px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div style="padding-bottom: 20px;border-bottom: 1px solid rgba(250,250,250,0.15);"></div>
+          <div class="section-heading">
+            <h2 style="padding: 15px 0px 0px; border-bottom:none">Nuestros productos más populares</h2>
+          </div>
+        </div>
+
+        <!-- Primer producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-01.png" alt="Course One">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Firma%20Electr%C3%B3nica%20(Persona%20Jur%C3%ADdica)."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="firma-persona-juridica.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segundo producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-02.png" alt="">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Firma%20Electr%C3%B3nica%20(Persona%20Natural)."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="firma-persona-natural.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tercer producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-19.png" alt="">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20Depreciaci%C3%B3n%20de%20Activos."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="sistema-amelia.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cuarto producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-18.png" alt="">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Datos%20de%20Renta."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="Orel-Gold.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quinto producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-07.png" alt="">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20D%C3%A9cimo%20Cuarto%20Sueldo."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="orel-ats.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sexto producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-04.png" alt="Course Two">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Plantilla:%20D%C3%A9cimo%20Tercer%20Sueldo."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="datos-renta.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- septimo producto -->
+        <div class="col-md-4" style="border: 1px solid #ccc; padding: 10px;">
+          <div class="item">
+            <img src="assets/images/course-14.png" alt="">
+            <div class="down-content">
+              <div class="row">
+                <div class="col-6"
+                  style="display: flex; align-items: center; justify-content: flex-end; border-right: 1px solid #000;">
+                  <a href="https://api.whatsapp.com/send?phone=+593982792618&text=Necesito%20m%C3%A1s%20informaci%C3%B3n%20de%20Datos%20de%20Renta."
+                    target="_blank" style="margin-right: 20px;">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                    <h7><b>Adquirir</b></h7>
+                  </a>
+                </div>
+                <div class="col-6" style="display: flex; align-items: center; justify-content: flex-start;">
+                  <a href="no-obligados-a-llevar-contabilidad.html" target="_blank">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    <h7><b>Ver Precios</b></h7>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </section>
+  <!--Datos-->
+  <section style="text-align: center;" style="text-align: center;" section class="our-courses" id="courses"
+    style="padding-top:10px;">
+    <div class="col-lg-6 mx-auto">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="texto" style="text-align: center;">Forma parte ya de nuestra <b><a href=""
+                class="comunidad">Comunidad</a></b><br>y revolucionemos el esquema ordinario de las empresas.</h2>
+        </div>
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="count-area-content percentage">
+                <div class="count-digit">100</div>
+                <div class="count-title"><b>Satisfacción en nuestros proyectos</b></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="count-area-content">
+                <div class="count-digit">5000</div>
+                <div class="count-title"><b>Horas de Asesoría y Capacitación</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="count-area-content new-students">
+                <div class="count-digit">1340</div>
+                <div class="count-title"><b>Suscriptores</b></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="count-area-content">
+                <div class="count-digit">7562</div>
+                <div class="count-title"><b>Clientes a nivel Nacional</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--Preguntas frecuentes -->
+  <section style="text-align: center;" section class="our-courses" id="courses" style="padding-top:10px;">
+    <div class="col-lg-6" style="display: inline-block; text-align: left;">
+      <div class="accordions">
+        <article class="accordion">
+          <div class="accordion-head">
+            <span>¿Por qué debo tener una asesoría financiera?</span>
+            <span class="icon">
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="accordion-body">
+            <div class="content">
+              <p>Porque este servicio de asesoría financiera se lleva a cabo mediante profesionales expertos llamados
+                asesores financieros. Quienes gracias a sus conocimientos expertos y su perspectiva neutral de la
+                situación de las finanzas de la empresa o la persona, pueden trazar un plan de acción que sea
+                beneficioso
+                para los intereses económicos a largo plazo de la misma.</p>
+            </div>
+          </div>
+        </article>
+        <article class="accordion">
+          <div class="accordion-head">
+            <span>¿Por qué debo tener una asesoría tecnológica?</span>
+            <span class="icon">
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="accordion-body">
+            <div class="content">
+              <p>Porque se encarga de asesorar el desarrollo e incorporación de la estructura tecnológica de una
+                empresa,
+                satisfaciendo la necesaria cobertura que permite el funcionamiento tanto de sus equipos informáticos,
+                como
+                de los métodos de conexión, almacenamiento y el resto de apartados relacionados con la administración,
+                gestión y soporte de los sistemas.</p>
+            </div>
+          </div>
+        </article>
+        <article class="accordion">
+          <div class="accordion-head">
+            <span>¿Qué es una firma electrónica?</span>
+            <span class="icon">
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="accordion-body">
+            <div class="content">
+              <p>La firma electrónica es un concepto jurídico, equivalente electrónico al de la firma manuscrita, donde
+                una persona acepta y da por válido el contenido de un mensaje electrónico a través de cualquier medio
+                electrónico que sea legítimo y permitido​.</p>
+            </div>
+          </div>
+        </article>
+        <article class="accordion last-accordion">
+          <div class="accordion-head">
+            <span>¿Qué es facturación electrónica?</span>
+            <span class="icon">
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+          <div class="accordion-body">
+            <div class="content">
+              <p>Una factura electrónica es un documento digital legalmente válido y sirve como respaldo de las
+                operaciones comerciales entre contribuyentes por lo cual reemplaza a las facturas tradicionales de
+                papel.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!--Suscripcion-->
+  <section class="contact-us" id="contact" style="background-color: #1f2937; color: white; padding: 50px 0;">
+    <div style="border: 5px solid #DDE1F0; padding: 60px; border-radius: 10px; background-color: #DDE1F0;">
+      <div class="container" style="background-color: #DDE1F0; padding: 30px; border-radius: 5px;">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="company-info">
+              <h2 style="color: black;">BEGROUP</h2>
+              <p style="color: black; text-align: justify; margin-top: 10px;">Somos una empresa dedicada a la producción
+                y comercialización de herramientas tecnológicas para PYMES bajo los mejores estándares de servicio y
+                calidad para nuestros clientes.</p>
+              <h2 style="color: black; margin-top: 35px;">VISIÓN</h2>
+              <p style="color: black; text-align: justify; margin-top: 10px;">Consolidarnos como la empresa líder en el
+                mercado de productos y servicios tecnológicos para PYMES en el Ecuador manteniendo procesos de mejora
+                continúa basados en la innovación, calidad y servicio al cliente, procurando el beneficio de nuestros
+                colaboradores y distribuidores, así como también contribuir al desempeño y fortalecimiento tecnológico
+                de nuestro país.</p>
+              <p class="company-name" style="margin-top: 30px; color: white;"><br><br></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contactos" style="background-color: white; padding: 30px; border-radius: 10px;">
+              <form id="contactForm">
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <input type="email" class="form-control" placeholder="Correo electrónico" id="email" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 40px;">
+                  <input type="tel" class="form-control" placeholder="Teléfono" id="telefono" maxlength="10"
+                    pattern="\d{10}" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                </div>
+
+                <button type="button" id="enviarBtn"
+                  style="width: 100%; padding: 10px; background-color: #3b82f6; color: white; border: none; border-radius: 0; cursor: pointer;">Suscribirse</button>
+              </form>
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            document.getElementById('enviarBtn').addEventListener('click', async function () {
+              const nombre = document.getElementById('nombre').value;
+              const email = document.getElementById('email').value;
+              const telefono = document.getElementById('telefono').value;
+
+              const mensaje = `Hola, mi nombre es ${nombre}, mi correo electrónico es ${email} y mi teléfono es ${telefono}, me gustaría suscribirme a Begroup.`;
+
+              const data = {
+                ruc: "2390057019001",
+                image: null,
+                message: mensaje,
+                document: null,
+                cellphone: "593990968691",
+                from: "Contacto Begroup",
+                typeMessage: "2",
+                title: "Contacto Begroup",
+                nombre,
+                email,
+                telefono
+              };
+
+              try {
+                const response = await fetch('https://begroupec-tech.com/api-whatsapp/bridge_v2.php', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                });
+
+                const responseText = await response.text();
+                let responseData;
+
+                try {
+                  responseData = JSON.parse(responseText);
+                } catch (error) {
+                  // Si no es JSON, asumimos que es una cadena de éxito o error
+                  responseData = { success: responseText.includes('success') };
+                }
+
+                if (responseData.success) {
+                  Swal.fire({
+                    title: '¡Mensaje enviado!',
+                    text: 'Gracias por suscribirse.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                  });
+                } else {
+                  throw new Error(responseData.error || 'Error desconocido');
+                }
+              } catch (error) {
+                console.error('Error al enviar mensaje a WhatsApp:', error);
+                Swal.fire({
+                  title: '¡Error!',
+                  text: 'Su mensaje no fue enviado.',
+                  icon: 'error',
+                  confirmButtonText: 'Aceptar'
+                });
+              }
+            });
+          </script>
+          <div class="row">
+            <div class="col-lg-12" style="margin-top: 20px;">
+              <ul style="list-style: none; padding: 0; display: inline-flex;">
+                <li style="margin-right: 20px;"><a href="https://www.facebook.com/profile.php?id=100064120628159"><i
+                      class="fa fa-facebook fa-2x" style="color: #3b5998;"></i></a></li>
+                <li style="margin-right: 20px;"><a href="https://www.instagram.com/begroupec/"><i
+                      class="fa fa-instagram fa-2x" style="color: #C13584;"></i></a></li>
+                <li style="margin-right: 20px;"><a
+                    href="https://www.tiktok.com/@begroupecu?is_from_webapp=1&sender_device=pc"><i
+                      class="fab fa-tiktok fa-2x" style="color: #000000;"></i></a></li>
+                <li style="margin-right: 20px;"><a href="https://www.linkedin.com/company/begroup-ec/"><i
+                      class="fa fa-linkedin fa-2x" style="color: #0A66C2;"></i></a></li>
+                <li style="margin-right: 20px;"><a href="https://www.youtube.com/@BeGroupSAS"><i
+                      class="fa fa-youtube fa-2x" style="color: #FF0000;"></i></a></li>
+              </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--Contactos-->
+  <!-- Contact Section -->
+  <section class="contactos">
+    <div class="container">
+      <div class="row">
+        <!-- Numero -->
+        <div class="col-lg-3">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp fa-3x" style="color: #25d366;"></i>
+            </div>
+            <h6>Número</h6>
+            <p><a
+                href="https://api.whatsapp.com/send?phone=+593982792618&text=%C2%A1Hola,%20reciba%20un%20cordial%20saludo,%20me%20quiero%20comunicar%20con%20BeGroup"
+                target="_blank">+593 98 279 2618</a></p>
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="col-lg-3">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="fa fa-phone fa-3x" style="color: #007bff;"></i>
+            </div>
+            <h6>Dirección</h6>
+            <p>02 2762 190 / SANTO DOMINGO</p>
+          </div>
+        </div>
+
+        <!-- Correo -->
+        <div class="col-lg-3">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="fa fa-envelope fa-3x" style="color: #D44638;"></i>
+            </div>
+            <h6>Correo</h6>
+            <p><a href="mailto:gerencia@begroupec.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i>
+                gerencia@begroupec.com</a></p>
+          </div>
+        </div>
+
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
+
+    var showSection = function showSection(section, isAnimate) {
+      var
+        direction = section.replace(/#/, ''),
+        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+        reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $('body, html').animate({
+          scrollTop: reqSectionPos
+        },
+          800);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+
+    };
+
+    var checkSection = function checkSection() {
+      $('.section').each(function () {
+        var
+          $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var
+            currentId = $this.data('section'),
+            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+          reqLink.closest('li').addClass('active').
+            siblings().removeClass('active');
+        }
+      });
+    };
+
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var accordions = document.querySelectorAll(".accordion");
+
+      accordions.forEach(function (accordion) {
+        var head = accordion.querySelector(".accordion-head");
+        var body = accordion.querySelector(".accordion-body");
+
+        head.addEventListener("click", function () {
+          accordion.classList.toggle("is-expanded");
+          if (accordion.classList.contains("is-expanded")) {
+            body.style.maxHeight = body.scrollHeight + "px";
+          } else {
+            body.style.maxHeight = null;
+          }
+        });
+      });
+    });
+  </script>
+  <div class="nav-bottom">
+    <div class="popup-whatsapp fadeIn">
+      <div class="content-whatsapp -top">
+        <button type="button" class="closePopup">
+          <i class="material-icons icon-font-color">minimize</i>
+        </button>
+        <p>
+          <span class="robot-icon">🤖</span>
+          <i class="whatsapp-icon"></i>
+          Hola, ¿en qué podemos ayudarle?
+        </p>
+      </div>
+      <div class="content-whatsapp -bottom">
+        <input class="whats-input" id="whats-in" type="text" placeholder="Enviar mensaje..." />
+        <button class="send-msPopup" id="send-btn" type="button">
+          <i class="material-icons icon-send">send</i>
+        </button>
+      </div>
+    </div>
+    <button type="button" id="whats-openPopup" class="whatsapp-button">
+      <div class="float">
+        <i class="fa fa-whatsapp my-float"></i>
+      </div>
+    </button>
+    <div class="circle-anime"></div>
+  </div>
+  <script>
+    document.getElementById('whats-openPopup').addEventListener('click', function () {
+      document.querySelector('.popup-whatsapp').style.display = 'block';
+    });
+
+    document.querySelector('.closePopup').addEventListener('click', function () {
+      document.querySelector('.popup-whatsapp').style.display = 'none';
+    });
+
+    document.getElementById('send-btn').addEventListener('click', function () {
+      var message = document.getElementById('whats-in').value;
+      var url = "https://api.whatsapp.com/send?phone=+593986247398&text=" + encodeURIComponent(message);
+      window.open(url);
+    });
+  </script>
+</body>
+
+</html>
